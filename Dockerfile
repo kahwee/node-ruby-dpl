@@ -1,4 +1,4 @@
-FROM node:5.9
+FROM node:6.3
 RUN apt-get update -yq
 RUN apt-get install default-jre -y
 RUN apt-get install zip -y
