@@ -5,7 +5,8 @@ RUN apt-get install -y \
 	apt-transport-https \
 	ca-certificates \
 	curl \
-	gnupg
+	gnupg \
+	xvfb
 
 RUN set -xe \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
