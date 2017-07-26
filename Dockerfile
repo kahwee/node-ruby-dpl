@@ -1,4 +1,4 @@
-FROM node:7.10
+FROM node:8.2.1
 RUN apt-get update -yq
 RUN apt-get install default-jre zip unzip ruby -y
 RUN apt-get install -y \
@@ -7,6 +7,8 @@ RUN apt-get install -y \
 	curl \
 	gnupg \
 	xvfb
+	
+RUN yarn global add npm
 
 RUN set -xe \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
