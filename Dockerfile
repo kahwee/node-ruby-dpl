@@ -2,13 +2,16 @@ FROM node:8.2.1
 RUN apt-get update -yq
 RUN apt-get install default-jre zip unzip ruby -y
 RUN apt-get install -y \
-	dumb-init \
-	apt-transport-https \
-	ca-certificates \
-	curl \
-	gnupg \
-	xvfb
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg \
+  xvfb
 	
+
+RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
+RUN dpkg -i dumb-init_*.deb
+
 RUN yarn global add npm
 
 RUN gem install dpl
@@ -28,9 +31,9 @@ RUN useradd headless --shell /bin/bash --create-home \
 RUN mkdir /data
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--", \
-            "/usr/bin/google-chrome-unstable", \
-            "--disable-gpu", \
-            "--headless", \
-            "--remote-debugging-address=0.0.0.0", \
-            "--remote-debugging-port=9222", \
-            "--user-data-dir=/data"]
+  "/usr/bin/google-chrome-unstable", \
+  "--disable-gpu", \
+  "--headless", \
+  "--remote-debugging-address=0.0.0.0", \
+  "--remote-debugging-port=9222", \
+  "--user-data-dir=/data"]
