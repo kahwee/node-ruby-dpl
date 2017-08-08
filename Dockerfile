@@ -6,9 +6,6 @@ RUN apt-get update -qqy \
     zip \
     unzip \
     ruby \
-    apt-transport-https \
-    ca-certificates \
-    ttf-wqy-zenhei \
     curl \
     gnupg \
     xvfb
