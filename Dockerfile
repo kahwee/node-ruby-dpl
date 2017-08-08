@@ -4,13 +4,11 @@ RUN apt-get install default-jre zip unzip ruby -y
 RUN apt-get install -y \
   apt-transport-https \
   ca-certificates \
+  ttf-wqy-zenhei \
+  ttf-unfonts-core \
   curl \
   gnupg \
   xvfb
-	
-
-RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
-RUN dpkg -i dumb-init_*.deb
 
 RUN yarn global add npm
 
@@ -30,8 +28,7 @@ RUN useradd headless --shell /bin/bash --create-home \
 
 RUN mkdir /data
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--", \
-  "/usr/bin/google-chrome-stable", \
+ENTRYPOINT ["/usr/bin/google-chrome-unstable", \
   "--disable-gpu", \
   "--headless", \
   "--remote-debugging-address=0.0.0.0", \
