@@ -12,9 +12,8 @@ RUN apt-get update -qqy \
     curl \
     gnupg \
     xvfb
+  && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN yarn global add npm
 
 RUN gem install dpl
-
-RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
