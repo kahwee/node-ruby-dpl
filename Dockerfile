@@ -8,7 +8,7 @@ RUN apt-get update -qqy \
     ruby \
     curl \
     gnupg \
-    xvfb
+    xvfb \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN yarn global add npm
