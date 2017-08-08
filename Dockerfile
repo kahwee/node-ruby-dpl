@@ -31,7 +31,7 @@ RUN useradd headless --shell /bin/bash --create-home \
 RUN mkdir /data
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--", \
-  "/usr/bin/google-chrome-unstable", \
+  "/usr/bin/google-chrome-stable", \
   "--disable-gpu", \
   "--headless", \
   "--remote-debugging-address=0.0.0.0", \
