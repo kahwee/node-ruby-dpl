@@ -9,8 +9,11 @@ RUN apt-get update -qqy \
     curl \
     gnupg \
     xvfb \
+    python-pip \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN yarn global add npm
 
 RUN gem install dpl
+
+RUN pip install s3cmd
