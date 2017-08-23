@@ -16,4 +16,5 @@ RUN yarn global add npm
 
 RUN gem install dpl
 
-RUN pip install s3cmd
+RUN pip install s3cmd awscli
+ 
