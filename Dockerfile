@@ -1,4 +1,4 @@
-FROM node:8.4.0
+FROM node:8.5.0
 
 RUN apt-get update -qqy \
   && apt-get install -qqy \
@@ -17,4 +17,3 @@ RUN yarn global add npm
 RUN gem install dpl
 
 RUN pip install s3cmd awscli
- 
