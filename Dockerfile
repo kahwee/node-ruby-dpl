@@ -10,6 +10,7 @@ RUN apt-get update -qqy \
     gnupg \
     xvfb \
     python-pip \
+    libpython-dev \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN yarn global add npm
