@@ -19,6 +19,6 @@ RUN gem install dpl
 
 RUN pip install -U pip
 
-RUN pip install awscli --upgrade --user
+RUN pip install awscli
 
 RUN pip install s3cmd
