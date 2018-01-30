@@ -1,4 +1,4 @@
-FROM node:8.8
+FROM node:8.9
 
 RUN apt-get update -qqy \
   && apt-get install -qqy \
